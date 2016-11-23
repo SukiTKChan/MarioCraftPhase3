@@ -17,3 +17,6 @@ c:\users\suki\documents\visual studio 2013\Projects\MarioCraftPhase3_Suki\MarioC
 c:\users\suki\documents\visual studio 2013\Projects\MarioCraftPhase3_Suki\MarioCraftPhase3_Suki\obj\Debug\MarioCraftPhase3_Suki.csproj.GenerateResource.Cache
 c:\users\suki\documents\visual studio 2013\Projects\MarioCraftPhase3_Suki\MarioCraftPhase3_Suki\obj\Debug\MarioCraftPhase3_Suki.exe
 c:\users\suki\documents\visual studio 2013\Projects\MarioCraftPhase3_Suki\MarioCraftPhase3_Suki\obj\Debug\MarioCraftPhase3_Suki.pdb
+C:\Users\Suki\Documents\GitHub\MarioCraftPhase3\MarioCraftPhase3_Suki\MarioCraftPhase3_Suki\bin\Debug\MarioCraftPhase3_Suki.exe.config
+C:\Users\Suki\Documents\GitHub\MarioCraftPhase3\MarioCraftPhase3_Suki\MarioCraftPhase3_Suki\obj\Debug\MarioCraftPhase3_Suki.exe
+C:\Users\Suki\Documents\GitHub\MarioCraftPhase3\MarioCraftPhase3_Suki\MarioCraftPhase3_Suki\obj\Debug\MarioCraftPhase3_Suki.pdb
