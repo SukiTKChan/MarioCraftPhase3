@@ -5,9 +5,9 @@ namespace MarioCraftPhase3_Suki
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class Model1 : DbContext
+    public partial class MarioCraftModel : DbContext
     {
-        public Model1()
+        public MarioCraftModel()
             : base("name=Model1")
         {
         }

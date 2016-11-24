@@ -24,5 +24,11 @@ namespace MarioCraftPhase3_Suki
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            formMainMenu frm = new formMainMenu();
+            frm.Show();
+        }
     }
 }
