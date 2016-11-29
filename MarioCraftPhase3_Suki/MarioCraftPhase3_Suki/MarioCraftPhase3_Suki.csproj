@@ -137,7 +137,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Resources\Super Mario 286.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

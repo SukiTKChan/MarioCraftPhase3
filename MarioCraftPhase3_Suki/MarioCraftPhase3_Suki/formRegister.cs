@@ -12,17 +12,9 @@ namespace MarioCraftPhase3_Suki
 {
     public partial class formRegister : Form
     {
-        private formMainMenu mainMenu;
-
         public formRegister()
         {
             InitializeComponent();
-        }
-
-        public formRegister(formMainMenu mainMenu)
-        {
-            InitializeComponent();
-            this.mainMenu = mainMenu;
         }
 
 
