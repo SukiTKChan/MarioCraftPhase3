@@ -35,13 +35,15 @@
             this.lblReg = new System.Windows.Forms.Label();
             this.btnLogIn = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
+            this.picBoxTitleImage = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxTitleImage)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUserPassword
             // 
             this.lblUserPassword.AutoSize = true;
             this.lblUserPassword.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserPassword.Location = new System.Drawing.Point(222, 311);
+            this.lblUserPassword.Location = new System.Drawing.Point(225, 340);
             this.lblUserPassword.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblUserPassword.Name = "lblUserPassword";
             this.lblUserPassword.Size = new System.Drawing.Size(122, 25);
@@ -52,7 +54,7 @@
             // 
             this.lblUserEmail.AutoSize = true;
             this.lblUserEmail.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserEmail.Location = new System.Drawing.Point(222, 245);
+            this.lblUserEmail.Location = new System.Drawing.Point(225, 274);
             this.lblUserEmail.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblUserEmail.Name = "lblUserEmail";
             this.lblUserEmail.Size = new System.Drawing.Size(172, 25);
@@ -61,7 +63,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(406, 245);
+            this.txtEmail.Location = new System.Drawing.Point(409, 274);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.txtEmail.MaxLength = 20;
             this.txtEmail.Name = "txtEmail";
@@ -70,7 +72,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(406, 300);
+            this.txtPassword.Location = new System.Drawing.Point(409, 329);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.txtPassword.MaxLength = 20;
             this.txtPassword.Name = "txtPassword";
@@ -90,12 +92,13 @@
             // btnLogIn
             // 
             this.btnLogIn.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogIn.Location = new System.Drawing.Point(317, 368);
+            this.btnLogIn.Location = new System.Drawing.Point(320, 397);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(191, 39);
             this.btnLogIn.TabIndex = 3;
             this.btnLogIn.Text = "Log In";
             this.btnLogIn.UseVisualStyleBackColor = true;
+            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
             // btnRegister
             // 
@@ -108,11 +111,20 @@
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
+            // picBoxTitleImage
+            // 
+            this.picBoxTitleImage.Location = new System.Drawing.Point(12, 21);
+            this.picBoxTitleImage.Name = "picBoxTitleImage";
+            this.picBoxTitleImage.Size = new System.Drawing.Size(860, 224);
+            this.picBoxTitleImage.TabIndex = 5;
+            this.picBoxTitleImage.TabStop = false;
+            // 
             // formMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 565);
+            this.Controls.Add(this.picBoxTitleImage);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnLogIn);
             this.Controls.Add(this.lblReg);
@@ -125,6 +137,7 @@
             this.Name = "formMainMenu";
             this.Text = "MainMenu";
             this.Load += new System.EventHandler(this.formMainMenu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxTitleImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,5 +152,6 @@
         private System.Windows.Forms.Label lblReg;
         private System.Windows.Forms.Button btnLogIn;
         private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.PictureBox picBoxTitleImage;
     }
 }

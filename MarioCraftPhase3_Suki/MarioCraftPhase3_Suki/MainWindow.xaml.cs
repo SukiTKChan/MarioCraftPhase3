@@ -32,6 +32,8 @@ namespace MarioCraftPhase3_Suki
         {
             this.Hide();
 
+            
+
             formMainMenu mainMenuFrm = new formMainMenu();
             mainMenuFrm.Show();
 

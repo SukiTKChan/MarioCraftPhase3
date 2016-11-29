@@ -23,6 +23,7 @@ namespace MarioCraftPhase3_Suki
         {
             InitializeComponent();
             this.mainMenu = mainMenu;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
 
@@ -41,6 +42,13 @@ namespace MarioCraftPhase3_Suki
         private void toolTipEmail_Popup(object sender, PopupEventArgs e)
         {
             toolTipPassword.Show("Email address must contains @ ", lblEmail);
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            formMainMenu mainMenu = new formMainMenu(this);
+            this.Close();
+            mainMenu.Show();
         }
     }
 }
