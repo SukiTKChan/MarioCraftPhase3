@@ -32,14 +32,14 @@
             this.lblUserID = new System.Windows.Forms.Label();
             this.txtUserID = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.toolTipPassword = new System.Windows.Forms.ToolTip(this.components);
-            this.toolTipEmail = new System.Windows.Forms.ToolTip(this.components);
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.grpRegisterUser = new System.Windows.Forms.GroupBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.toolTipPassword = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipEmail = new System.Windows.Forms.ToolTip(this.components);
             this.grpRegisterUser.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,24 +73,6 @@
             this.lblEmail.TabIndex = 2;
             this.lblEmail.Text = "Email Address";
             // 
-            // txtEmail
-            // 
-            this.txtEmail.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(244, 127);
-            this.txtEmail.MaxLength = 20;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(191, 32);
-            this.txtEmail.TabIndex = 0;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(244, 176);
-            this.textBox1.MaxLength = 20;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(191, 32);
-            this.textBox1.TabIndex = 2;
-            // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
@@ -101,16 +83,6 @@
             this.lblPassword.TabIndex = 5;
             this.lblPassword.Text = "Password";
             // 
-            // toolTipPassword
-            // 
-            this.toolTipPassword.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTipPassword.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTipPassword_Popup);
-            // 
-            // toolTipEmail
-            // 
-            this.toolTipEmail.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTipEmail.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTipEmail_Popup);
-            // 
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -120,6 +92,7 @@
             this.btnSubmit.TabIndex = 6;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnBack
             // 
@@ -135,19 +108,45 @@
             // grpRegisterUser
             // 
             this.grpRegisterUser.Controls.Add(this.txtEmail);
+            this.grpRegisterUser.Controls.Add(this.txtPassword);
             this.grpRegisterUser.Controls.Add(this.lblUserID);
             this.grpRegisterUser.Controls.Add(this.btnSubmit);
             this.grpRegisterUser.Controls.Add(this.txtUserID);
             this.grpRegisterUser.Controls.Add(this.lblPassword);
             this.grpRegisterUser.Controls.Add(this.lblEmail);
-            this.grpRegisterUser.Controls.Add(this.textBox1);
             this.grpRegisterUser.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpRegisterUser.Location = new System.Drawing.Point(208, 126);
             this.grpRegisterUser.Name = "grpRegisterUser";
-            this.grpRegisterUser.Size = new System.Drawing.Size(458, 329);
+            this.grpRegisterUser.Size = new System.Drawing.Size(486, 329);
             this.grpRegisterUser.TabIndex = 8;
             this.grpRegisterUser.TabStop = false;
             this.grpRegisterUser.Text = "Register User";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(244, 130);
+            this.txtEmail.MaxLength = 20;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(208, 32);
+            this.txtEmail.TabIndex = 7;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(244, 179);
+            this.txtPassword.MaxLength = 20;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(208, 32);
+            this.txtPassword.TabIndex = 8;
+            // 
+            // toolTipPassword
+            // 
+            this.toolTipPassword.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
+            // toolTipEmail
+            // 
+            this.toolTipEmail.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
             // formRegister
             // 
@@ -170,13 +169,13 @@
         private System.Windows.Forms.Label lblUserID;
         private System.Windows.Forms.TextBox txtUserID;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.ToolTip toolTipPassword;
-        private System.Windows.Forms.ToolTip toolTipEmail;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.GroupBox grpRegisterUser;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.ToolTip toolTipPassword;
+        private System.Windows.Forms.ToolTip toolTipEmail;
     }
 }

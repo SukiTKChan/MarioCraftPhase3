@@ -12,7 +12,10 @@ namespace MarioCraftPhase3_Suki
 {
     public partial class formRegister : Form
     {
+        private GAMEUSER gameUser = new GAMEUSER();
+
         private formMainMenu mainMenu;
+
 
         public formRegister()
         {
@@ -29,26 +32,58 @@ namespace MarioCraftPhase3_Suki
 
         private void formRegister_Load(object sender, EventArgs e)
         {
+            toolTipEmail.SetToolTip(txtEmail, "Email address must contains @ ");
+
+            toolTipPassword.SetToolTip(txtPassword, "Password must be at between 6-20 characters in length " +
+                                 "\nMust must contain a number " +
+                                 "\nAn uppercase and a lowercase ");
+
 
         }
 
-        private void toolTipPassword_Popup(object sender, PopupEventArgs e)
-        {
-            toolTipPassword.Show("Password must be at between 6-20 characters in length " + 
-                                 "Must must contain a number " +
-                                 "An uppercase and a lowercase ",lblPassword);
-        }
-
-        private void toolTipEmail_Popup(object sender, PopupEventArgs e)
-        {
-            toolTipPassword.Show("Email address must contains @ ", lblEmail);
-        }
-
+        
         private void btnBack_Click(object sender, EventArgs e)
         {
             formMainMenu mainMenu = new formMainMenu(this);
             this.Close();
             mainMenu.Show();
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            //if email field display error message
+            if (txtEmail.Text.Equals(""))
+            {
+
+                MessageBox.Show("You must enter an email address!",
+                    "Email field empty",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEmail.Focus();
+                return;
+            }
+
+            //if password field empty
+            if (txtPassword.Text.Equals(""))
+            {
+                MessageBox.Show("You must enter a password!",
+                    "Password field empty",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPassword.Focus();
+                return;
+            }
+
+
+
+        }
+
+        private void toolTipPassword_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
+
+        private void toolTipEmail_Popup(object sender, PopupEventArgs e)
+        {
+
         }
     }
 }

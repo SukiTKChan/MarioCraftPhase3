@@ -47,7 +47,7 @@
             this.lblUserPassword.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblUserPassword.Name = "lblUserPassword";
             this.lblUserPassword.Size = new System.Drawing.Size(122, 25);
-            this.lblUserPassword.TabIndex = 0;
+            this.lblUserPassword.TabIndex = 6;
             this.lblUserPassword.Text = "Password";
             // 
             // lblUserEmail
@@ -58,7 +58,7 @@
             this.lblUserEmail.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblUserEmail.Name = "lblUserEmail";
             this.lblUserEmail.Size = new System.Drawing.Size(172, 25);
-            this.lblUserEmail.TabIndex = 0;
+            this.lblUserEmail.TabIndex = 5;
             this.lblUserEmail.Text = "Email Address";
             // 
             // txtEmail

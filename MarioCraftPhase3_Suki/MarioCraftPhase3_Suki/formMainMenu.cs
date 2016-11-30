@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OracleClient;
 
 namespace MarioCraftPhase3_Suki
 {
@@ -14,7 +15,7 @@ namespace MarioCraftPhase3_Suki
     {
         private formRegister registerMenu;
 
-        GAMEUSER gameUser;
+        private GAMEUSER gameUser = new GAMEUSER();
 
         public formMainMenu()
         {
@@ -49,20 +50,21 @@ namespace MarioCraftPhase3_Suki
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            gameUser = new GAMEUSER();
-
-
+            
+            
             //if email field display error message
-            if(txtEmail.Text.Equals(""))
+            if(txtEmail.Text == "")
             {
+                
                 MessageBox.Show("You must enter an email address!", 
                     "Email field empty",
                     MessageBoxButtons.OK,MessageBoxIcon.Error);
                 txtEmail.Focus();
                 return;
             }
-                //if email does not match records in database
-            else if (txtEmail.Text.Equals(gameUser.USEREMAIL))
+
+            //if email does not match records in database
+           else if (txtEmail.Text == gameUser.USEREMAIL)
             {
                 MessageBox.Show("Email not found, try again",
                     "Email not found",
@@ -71,17 +73,21 @@ namespace MarioCraftPhase3_Suki
                 return;
             }
             
+                
+
+
             //if password field empty
-            if (txtPassword.Text.Equals(""))
+            if (txtPassword.Text == "")
             {
                 MessageBox.Show("You must enter a password!",
                     "Password field empty",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPassword.Focus();
                 return;
-            }    
+            }
+                
             //if password does not match records in database
-            else if (txtPassword.Text.Equals(gameUser.USERPASSWORD))
+            else if (gameUser.USERPASSWORD != txtPassword.Text)
             {
                 MessageBox.Show("Password does not match record,please try again",
                    "Invalid Password",
@@ -89,8 +95,11 @@ namespace MarioCraftPhase3_Suki
                 txtPassword.Focus();
                 return;
             }
-                MessageBox.Show("Log In Success!", "Welcome!",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);          
+           
+            
+           MessageBox.Show("Log In Success!", "Comfirm Log In!", 
+               MessageBoxButtons.OK);
+           ClearForm();
         }
 
         private void ClearForm()
