@@ -14,7 +14,7 @@ namespace MarioCraftPhase3_Suki
     {
         private formRegister registerMenu;
 
-        private int gameUserID;
+        GAMEUSER gameUser;
 
         public formMainMenu()
         {
@@ -47,15 +47,56 @@ namespace MarioCraftPhase3_Suki
             formRegister.Show();
         }
 
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+            gameUser = new GAMEUSER();
+
+
+            //if email field display error message
+            if(txtEmail.Text.Equals(""))
+            {
+                MessageBox.Show("You must enter an email address!", 
+                    "Email field empty",
+                    MessageBoxButtons.OK,MessageBoxIcon.Error);
+                txtEmail.Focus();
+                return;
+            }
+                //if email does not match records in database
+            else if (txtEmail.Text.Equals(gameUser.USEREMAIL))
+            {
+                MessageBox.Show("Email not found, try again",
+                    "Email not found",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEmail.Focus();
+                return;
+            }
+            
+            //if password field empty
+            if (txtPassword.Text.Equals(""))
+            {
+                MessageBox.Show("You must enter a password!",
+                    "Password field empty",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPassword.Focus();
+                return;
+            }    
+            //if password does not match records in database
+            else if (txtPassword.Text.Equals(gameUser.USERPASSWORD))
+            {
+                MessageBox.Show("Password does not match record,please try again",
+                   "Invalid Password",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPassword.Focus();
+                return;
+            }
+                MessageBox.Show("Log In Success!", "Welcome!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);          
+        }
+
         private void ClearForm()
         {
             txtEmail.Clear();
             txtPassword.Clear();
-        }
-
-        private void btnLogIn_Click(object sender, EventArgs e)
-        {
-          
         }
     }
 }

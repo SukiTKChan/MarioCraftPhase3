@@ -63,20 +63,22 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(409, 274);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.txtEmail.MaxLength = 20;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(191, 32);
+            this.txtEmail.Size = new System.Drawing.Size(219, 28);
             this.txtEmail.TabIndex = 0;
             // 
             // txtPassword
             // 
+            this.txtPassword.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(409, 329);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.txtPassword.MaxLength = 20;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(191, 32);
+            this.txtPassword.Size = new System.Drawing.Size(219, 28);
             this.txtPassword.TabIndex = 1;
             // 
             // lblReg
