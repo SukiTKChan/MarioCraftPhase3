@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMainMenu));
             this.lblUserPassword = new System.Windows.Forms.Label();
             this.lblUserEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -36,17 +37,17 @@
             this.lblReg = new System.Windows.Forms.Label();
             this.btnLogIn = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.picBoxTitleImage = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxTitleImage)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUserPassword
             // 
             this.lblUserPassword.AutoSize = true;
             this.lblUserPassword.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserPassword.Location = new System.Drawing.Point(225, 340);
+            this.lblUserPassword.Location = new System.Drawing.Point(225, 328);
             this.lblUserPassword.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblUserPassword.Name = "lblUserPassword";
             this.lblUserPassword.Size = new System.Drawing.Size(122, 25);
@@ -96,10 +97,10 @@
             // 
             // btnLogIn
             // 
-            this.btnLogIn.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogIn.Font = new System.Drawing.Font("Super Mario 286", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogIn.Location = new System.Drawing.Point(320, 397);
             this.btnLogIn.Name = "btnLogIn";
-            this.btnLogIn.Size = new System.Drawing.Size(191, 39);
+            this.btnLogIn.Size = new System.Drawing.Size(191, 44);
             this.btnLogIn.TabIndex = 3;
             this.btnLogIn.Text = "Log In";
             this.btnLogIn.UseVisualStyleBackColor = true;
@@ -116,24 +117,26 @@
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // picBoxTitleImage
-            // 
-            this.picBoxTitleImage.Location = new System.Drawing.Point(12, 21);
-            this.picBoxTitleImage.Name = "picBoxTitleImage";
-            this.picBoxTitleImage.Size = new System.Drawing.Size(860, 224);
-            this.picBoxTitleImage.TabIndex = 5;
-            this.picBoxTitleImage.TabStop = false;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(203, 32);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(455, 184);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // formMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(884, 565);
-            this.Controls.Add(this.picBoxTitleImage);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnLogIn);
             this.Controls.Add(this.lblReg);
@@ -142,12 +145,13 @@
             this.Controls.Add(this.lblUserEmail);
             this.Controls.Add(this.lblUserPassword);
             this.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.Name = "formMainMenu";
             this.Text = "MainMenu";
             this.Load += new System.EventHandler(this.formMainMenu_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxTitleImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,7 +166,7 @@
         private System.Windows.Forms.Label lblReg;
         private System.Windows.Forms.Button btnLogIn;
         private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.PictureBox picBoxTitleImage;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

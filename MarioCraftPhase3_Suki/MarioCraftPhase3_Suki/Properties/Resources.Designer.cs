@@ -59,5 +59,15 @@ namespace MarioCraftPhase3_Suki.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TitleImage1 {
+            get {
+                object obj = ResourceManager.GetObject("TitleImage1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

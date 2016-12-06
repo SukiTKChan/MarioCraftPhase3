@@ -18,7 +18,6 @@ namespace MarioCraftPhase3_Suki
 
         GAMEUSER gameUser = new GAMEUSER();
 
-        //List<GAMEUSER> gu = new List<GAMEUSER>();
 
         public formMainMenu()
         {
