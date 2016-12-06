@@ -12,10 +12,9 @@ namespace MarioCraftPhase3_Suki
 {
     public partial class formRegister : Form
     {
-        private GAMEUSER gameUser = new GAMEUSER();
+         
 
         private formMainMenu mainMenu;
-
 
         public formRegister()
         {
@@ -51,42 +50,75 @@ namespace MarioCraftPhase3_Suki
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            //if email field display error message
-            if (txtEmail.Text.Equals(""))
-            {
 
-                MessageBox.Show("You must enter an email address!",
-                    "Email field empty",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MarioCraftModel ctx = new MarioCraftModel();
+            GAMEUSER addGameUser = new GAMEUSER();
+
+            var user = from u in ctx.GAMEUSERs where u.USEREMAIL == txtEmail.Text select u;
+
+            //check if user email matches database
+            var userExist = user.FirstOrDefault(a => a.USEREMAIL.Equals(txtEmail.Text));
+
+            //if either email or password field empty display error message
+            if (txtEmail.Text.Equals("") && txtPassword.Text.Equals(""))
+            {
+                MessageBox.Show("Email and Password field must not be empty", "Email or Password field empty",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmail.Focus();
                 return;
             }
 
-            //if password field empty
-            if (txtPassword.Text.Equals(""))
+            //if email does not match records in database
+            if (userExist != null)
             {
-                MessageBox.Show("You must enter a password!",
-                    "Password field empty",
+                //if password matches records in database
+                if (userExist.USERPASSWORD.Equals(txtPassword.Text))
+                {
+                    MessageBox.Show("Game User already exist, please log in", "Registeration error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtPassword.Focus();
-                return;
-            }
+                    
+                    formMainMenu mainMenu = new formMainMenu(this);
+                    this.Close();
+                    mainMenu.Show();
+                    
+                }
+                    
+             }
+            else //insert user
+            {
+                using (var context = new MarioCraftModel())
+                {
 
-            
+                    addGameUser.USEREMAIL = txtEmail.Text;
+                    addGameUser.USERPASSWORD = txtPassword.Text;
 
+                    try
+                    {
+                        context.GAMEUSERs.Add(addGameUser);
+                        context.SaveChanges();
+                        MessageBox.Show(addGameUser.USEREMAIL + "\n" + addGameUser.USERPASSWORD + "\n" +
+                            "You have Successfully Registered, Please log in", "Registered", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                        formMainMenu mainMenu = new formMainMenu(this);
+                        this.Close();
+                        mainMenu.Show();
 
+                        ClearForm();
+                    }
 
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.GetBaseException().ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                } 
+             }
         }
-
-        private void toolTipPassword_Popup(object sender, PopupEventArgs e)
+        private void ClearForm()
         {
-
+            txtEmail.Clear();
+            txtPassword.Clear();
         }
-
-        private void toolTipEmail_Popup(object sender, PopupEventArgs e)
-        {
-
-        }
-    }
+        
+      } 
 }

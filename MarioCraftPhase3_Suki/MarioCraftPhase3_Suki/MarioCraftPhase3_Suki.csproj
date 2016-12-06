@@ -85,6 +85,12 @@
     <Compile Include="formRegister.Designer.cs">
       <DependentUpon>formRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="formGameScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formGameScreen.Designer.cs">
+      <DependentUpon>formGameScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="GAMEUSERDETAIL.cs" />
     <Compile Include="formMainMenu.cs">
       <SubType>Form</SubType>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formRegister.resx">
       <DependentUpon>formRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formGameScreen.resx">
+      <DependentUpon>formGameScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

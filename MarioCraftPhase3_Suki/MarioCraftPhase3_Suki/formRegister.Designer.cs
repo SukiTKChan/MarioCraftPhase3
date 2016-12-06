@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lblUserID = new System.Windows.Forms.Label();
-            this.txtUserID = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
@@ -43,31 +41,11 @@
             this.grpRegisterUser.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblUserID
-            // 
-            this.lblUserID.AutoSize = true;
-            this.lblUserID.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserID.Location = new System.Drawing.Point(28, 83);
-            this.lblUserID.Name = "lblUserID";
-            this.lblUserID.Size = new System.Drawing.Size(98, 25);
-            this.lblUserID.TabIndex = 0;
-            this.lblUserID.Text = "User ID";
-            // 
-            // txtUserID
-            // 
-            this.txtUserID.Enabled = false;
-            this.txtUserID.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserID.Location = new System.Drawing.Point(244, 80);
-            this.txtUserID.MaxLength = 3;
-            this.txtUserID.Name = "txtUserID";
-            this.txtUserID.Size = new System.Drawing.Size(65, 32);
-            this.txtUserID.TabIndex = 0;
-            // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(28, 130);
+            this.lblEmail.Location = new System.Drawing.Point(25, 108);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(172, 25);
             this.lblEmail.TabIndex = 2;
@@ -77,7 +55,7 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(28, 176);
+            this.lblPassword.Location = new System.Drawing.Point(25, 154);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(122, 25);
             this.lblPassword.TabIndex = 5;
@@ -86,7 +64,7 @@
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(157, 256);
+            this.btnSubmit.Location = new System.Drawing.Point(154, 234);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(137, 35);
             this.btnSubmit.TabIndex = 6;
@@ -109,15 +87,13 @@
             // 
             this.grpRegisterUser.Controls.Add(this.txtEmail);
             this.grpRegisterUser.Controls.Add(this.txtPassword);
-            this.grpRegisterUser.Controls.Add(this.lblUserID);
             this.grpRegisterUser.Controls.Add(this.btnSubmit);
-            this.grpRegisterUser.Controls.Add(this.txtUserID);
             this.grpRegisterUser.Controls.Add(this.lblPassword);
             this.grpRegisterUser.Controls.Add(this.lblEmail);
             this.grpRegisterUser.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpRegisterUser.Location = new System.Drawing.Point(208, 126);
+            this.grpRegisterUser.Location = new System.Drawing.Point(187, 126);
             this.grpRegisterUser.Name = "grpRegisterUser";
-            this.grpRegisterUser.Size = new System.Drawing.Size(486, 329);
+            this.grpRegisterUser.Size = new System.Drawing.Size(541, 329);
             this.grpRegisterUser.TabIndex = 8;
             this.grpRegisterUser.TabStop = false;
             this.grpRegisterUser.Text = "Register User";
@@ -125,19 +101,19 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(244, 130);
+            this.txtEmail.Location = new System.Drawing.Point(241, 108);
             this.txtEmail.MaxLength = 20;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(208, 32);
+            this.txtEmail.Size = new System.Drawing.Size(219, 32);
             this.txtEmail.TabIndex = 7;
             // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(244, 179);
+            this.txtPassword.Location = new System.Drawing.Point(241, 157);
             this.txtPassword.MaxLength = 20;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(208, 32);
+            this.txtPassword.Size = new System.Drawing.Size(219, 32);
             this.txtPassword.TabIndex = 8;
             // 
             // toolTipPassword
@@ -166,8 +142,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblUserID;
-        private System.Windows.Forms.TextBox txtUserID;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Button btnSubmit;

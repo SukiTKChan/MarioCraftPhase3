@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblUserPassword = new System.Windows.Forms.Label();
             this.lblUserEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -36,7 +37,9 @@
             this.btnLogIn = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.picBoxTitleImage = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxTitleImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUserPassword
@@ -121,6 +124,10 @@
             this.picBoxTitleImage.TabIndex = 5;
             this.picBoxTitleImage.TabStop = false;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // formMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
@@ -140,6 +147,7 @@
             this.Text = "MainMenu";
             this.Load += new System.EventHandler(this.formMainMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxTitleImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,5 +163,6 @@
         private System.Windows.Forms.Button btnLogIn;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.PictureBox picBoxTitleImage;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

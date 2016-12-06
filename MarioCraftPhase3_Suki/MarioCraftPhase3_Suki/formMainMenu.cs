@@ -14,6 +14,8 @@ namespace MarioCraftPhase3_Suki
     public partial class formMainMenu : Form
     {
         private formRegister registerMenu;
+        private formGameScreen gameScreen;
+
         GAMEUSER gameUser = new GAMEUSER();
 
         //List<GAMEUSER> gu = new List<GAMEUSER>();
@@ -36,6 +38,15 @@ namespace MarioCraftPhase3_Suki
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
+        public formMainMenu(formGameScreen gameScreen)
+        {
+            InitializeComponent();
+            this.gameScreen = gameScreen;
+
+            //to make sure the window screen is display at centre
+            this.StartPosition = FormStartPosition.CenterScreen;
+        }
+
         private void formMainMenu_Load(object sender, EventArgs e)
         {
             
@@ -52,56 +63,59 @@ namespace MarioCraftPhase3_Suki
         private void btnLogIn_Click(object sender, EventArgs e)
         {
             
-            MarioCraftModel ctx = new MarioCraftModel();
-            //gameUser = ctx.GAMEUSERs.First();
+           MarioCraftModel ctx = new MarioCraftModel();
+           //gameUser = ctx.GAMEUSERs.First();
+           
+           var user = from u in ctx.GAMEUSERs where u.USEREMAIL == txtEmail.Text select u;
+           //var gu = from u in ctx.GAMEUSERs where u.USERPASSWORD == txtPassword.Text select u;
 
-             var user = from u in ctx.GAMEUSERs where u.USEREMAIL == txtEmail.Text select u;
-             var gu = from u in ctx.GAMEUSERs where u.USERPASSWORD == txtPassword.Text select u;
-            
-            //if email field display error message
-            if (txtEmail.Text == "")
+            //if either email or password field empty display error message
+            if (txtEmail.Text.Equals("") && txtPassword.Text.Equals(""))
             {
-                MessageBox.Show("You must enter an email address!",
-                    "Email field empty",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Email and Password field must not be empty", "Email or Password field empty",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmail.Focus();
                 return;
             }
+
+            //https://dotprogramming.blogspot.com/2015/09/login-form-using-entity-framework-in.html
+
+            //check if user email matches database
+            var userExist = user.FirstOrDefault(a => a.USEREMAIL.Equals(txtEmail.Text));
 
             //if email does not match records in database
-            if (txtEmail.Text != user.First().USEREMAIL) 
+            if (userExist != null)
             {
-                MessageBox.Show("Email not found, try again",
-                    "Email not found",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //if password matches records in database
+                if (userExist.USERPASSWORD.Equals(txtPassword.Text))
+                {
+                    MessageBox.Show("Log in success!", "Log In Confirmation",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearForm();
+
+                    formGameScreen gameScreen = new formGameScreen (this);
+                    this.Close();
+                    gameScreen.Show();
+                }
+                else
+                {
+                    errorProvider1.SetError(txtPassword,"Password does not match record,please try again");
+                    txtPassword.Focus();
+                    return;
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Game user not found",
+                "Invalid Email address",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmail.Focus();
                 return;
             }
 
-            //if password field empty
-            if (txtPassword.Text == "")
-            {
-                MessageBox.Show("You must enter a password!",
-                    "Password field empty",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtPassword.Focus();
-                return;
-            }
-                
-            //if password does not match records in database
-            if (txtPassword.Text != user.First().USERPASSWORD)
-            {
-                MessageBox.Show("Password does not match record,please try again",
-                   "Invalid Password",
-                   MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtPassword.Focus();
-                return;
-            }
-           
             
-           MessageBox.Show("Log In Success!", "Comfirm Log In!", 
-               MessageBoxButtons.OK);
-           ClearForm();
+           
         }
 
         private void ClearForm()
@@ -109,5 +123,6 @@ namespace MarioCraftPhase3_Suki
             txtEmail.Clear();
             txtPassword.Clear();
         }
+
     }
 }
