@@ -13,11 +13,12 @@ namespace MarioCraftPhase3_Suki
     public partial class formGameScreen : Form
     {
         private formMainMenu mainMenu;
+        
 
         public formGameScreen()
         {
             InitializeComponent();
-            KeyDown += new KeyEventHandler(formGameScreen_KeyDown);
+            //KeyDown += new KeyEventHandler(formGameScreen_KeyDown);
         }
         public formGameScreen(formMainMenu mainMenu)
         {
@@ -28,7 +29,7 @@ namespace MarioCraftPhase3_Suki
 
         private void btnUserDetail_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnBackToMainMenu_Click(object sender, EventArgs e)
@@ -45,16 +46,41 @@ namespace MarioCraftPhase3_Suki
 
         private void formGameScreen_KeyDown(object sender, KeyEventArgs e)
         {
-            int x = character.Location.X;
-            int y = character.Location.Y;
+            
+            //movement on player
+            if (e.KeyCode == Keys.W)
+            {
+                player.Top -= 10;
+            }
+                
+            if (e.KeyCode == Keys.S)
+            {
+                player.Top += 10;
+            }
 
-            if (e.KeyCode == Keys.Right)
-                x += 2;
-            else if (e.KeyCode == Keys.Left)
-                x -= 2;
+            if (e.KeyCode == Keys.A)
+            {
+                player.Left -= 10;
+            }
+
+            if (e.KeyCode == Keys.D)
+            {
+                player.Left += 10;
+            }
+
+            //player health
+            if (e.KeyCode == Keys.H)
+            {
+                playerHealthBar.Value -= 10;
+            }
+            if(playerHealthBar.Value == 0)
+            {
+                MessageBox.Show("Player Health reached 0",
+                "Game Over",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
 
-            character.Location = new System.Drawing.Point(x, y);
         }
     }
 }

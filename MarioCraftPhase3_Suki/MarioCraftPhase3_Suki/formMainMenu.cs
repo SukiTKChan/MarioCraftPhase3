@@ -48,7 +48,7 @@ namespace MarioCraftPhase3_Suki
 
         private void formMainMenu_Load(object sender, EventArgs e)
         {
-            
+            txtPassword.PasswordChar = '*';
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -121,6 +121,11 @@ namespace MarioCraftPhase3_Suki
         {
             txtEmail.Clear();
             txtPassword.Clear();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
     }
