@@ -12,8 +12,6 @@ namespace MarioCraftPhase3_Suki
 {
     public partial class formRegister : Form
     {
-         
-
         private formMainMenu mainMenu;
 
         public formRegister()
@@ -88,7 +86,7 @@ namespace MarioCraftPhase3_Suki
             {
                 using (var context = new MarioCraftModel())
                 {
-
+                    
                     addGameUser.USEREMAIL = txtEmail.Text;
                     addGameUser.USERPASSWORD = txtPassword.Text;
 

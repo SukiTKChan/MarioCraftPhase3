@@ -48,7 +48,7 @@ namespace MarioCraftPhase3_Suki
 
         private void formMainMenu_Load(object sender, EventArgs e)
         {
-            txtPassword.PasswordChar = '*';
+            //txtPassword.PasswordChar = '*';
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -92,13 +92,13 @@ namespace MarioCraftPhase3_Suki
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearForm();
 
-                    formGameScreen gameScreen = new formGameScreen (this);
+                    formGameScreen gameScreen = new formGameScreen(this);
                     this.Close();
                     gameScreen.Show();
                 }
                 else
                 {
-                    errorProvider1.SetError(txtPassword,"Password does not match record,please try again");
+                    errorProvider1.SetError(txtPassword, "Password does not match record,please try again");
                     txtPassword.Focus();
                     return;
                 }
@@ -111,22 +111,16 @@ namespace MarioCraftPhase3_Suki
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmail.Focus();
                 return;
-            }
-
-            
-           
+            }    
         }
-
         private void ClearForm()
         {
             txtEmail.Clear();
             txtPassword.Clear();
         }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
     }
 }

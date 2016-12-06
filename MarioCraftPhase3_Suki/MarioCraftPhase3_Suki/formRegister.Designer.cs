@@ -88,6 +88,7 @@
             this.btnSubmit.TabIndex = 11;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // lblPassword
             // 
@@ -110,6 +111,7 @@
             this.lblEmail.Size = new System.Drawing.Size(173, 31);
             this.lblEmail.TabIndex = 9;
             this.lblEmail.Text = "Email Address";
+            
             // 
             // formRegister
             // 
