@@ -83,7 +83,7 @@ namespace MarioCraftPhase3_Suki
             //check if user email matches database
             var userExist = user.FirstOrDefault(a => a.USEREMAIL.Equals(txtEmail.Text));
 
-            //if email does not match records in database
+            //if email match record in database
             if (userExist != null)
             {
                 //if password matches records in database

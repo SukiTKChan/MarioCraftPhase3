@@ -17,11 +17,11 @@ namespace MarioCraftPhase3_Suki
 
         private formMainMenu mainMenu;
 
-        GAMEUSER gu = new GAMEUSER();
+        GAMEUSER userUpdate = new GAMEUSER();
         GAMEUSERDETAIL u = new GAMEUSERDETAIL();
 
         private String email;
-       
+        //byte id;
 
         public formUserAccount()
         {
@@ -67,15 +67,15 @@ namespace MarioCraftPhase3_Suki
 
         private void formGameScreen_Load(object sender, EventArgs e)
         {
-            
 
+            
         }
 
         private void grdDetails_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             grpAmend.Show();
 
-            //var userID = from u in ctx.GAMEUSERs where u.USERID == id  select u;
+            //var userID = from u in ctx.GAMEUSERs where u.USERID == id select u;
             var userEmail = from u in ctx.GAMEUSERs where u.USEREMAIL == email select u;
             //var userPassword = from u in ctx.GAMEUSERs where u.USERPASSWORD == password select u;
 
@@ -94,19 +94,33 @@ namespace MarioCraftPhase3_Suki
                 txtEmail.Focus();
                 return;
             }
+             
 
-            var user = (from u in ctx.GAMEUSERs where u.USEREMAIL == txtEmail.Text select u);
+            var user = (from u in ctx.GAMEUSERs where u.USEREMAIL == email select u);
             var emailExist = user.FirstOrDefault(a => a.USEREMAIL.Equals(txtEmail.Text));
 
-            //if amended email does not already exist in db
-            if(emailExist == null)
+            //if amended email already exist in db
+            if (emailExist != null)
+            {
+                if (emailExist.USEREMAIL.Equals(txtEmail.Text))
+                {
+                    MessageBox.Show("Email address has been used, please enter another one", "Email cannot be used",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtEmail.Focus();
+                    return;
+
+                }
+
+            }
+            else
             {
                 using (var context = new MarioCraftModel())
                 {
+                    userUpdate.USEREMAIL = txtEmail.Text;
+
                     try//update new email
                     {
-                        gu.USEREMAIL = txtEmail.Text;
-                        
+
                         context.SaveChanges();
                         MessageBox.Show("Details updated", "Account Details updated",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -116,10 +130,8 @@ namespace MarioCraftPhase3_Suki
                     {
                         MessageBox.Show(ex.GetBaseException().ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
                 }
-            }     
-
+            }
         }   
     }
 }
