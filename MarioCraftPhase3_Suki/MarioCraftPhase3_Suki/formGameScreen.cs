@@ -13,6 +13,7 @@ namespace MarioCraftPhase3_Suki
     public partial class formGameScreen : Form
     {
         private formMainMenu mainMenu;
+        GAMEUSER gu = new GAMEUSER();
         
 
         public formGameScreen()
@@ -29,7 +30,14 @@ namespace MarioCraftPhase3_Suki
 
         private void btnUserDetail_Click(object sender, EventArgs e)
         {
+            MarioCraftModel ctx = new MarioCraftModel();
+            GAMEUSER viewUser = new GAMEUSER();
+
+            var user = from u in ctx.GAMEUSERs where u.USERID == 73 select u;
             
+            
+            this.txtEmail.Text = user.FirstOrDefault().USEREMAIL;
+
         }
 
         private void btnBackToMainMenu_Click(object sender, EventArgs e)
@@ -81,6 +89,16 @@ namespace MarioCraftPhase3_Suki
             }
 
 
+        }
+
+        private void btnViewRucksack_Click(object sender, EventArgs e)
+        {
+            //http://www.worldbestlearningcenter.com/index_files/csharp-entity-framework-datagridview.htm
+            var ctx = new MarioCraftModel();
+            BindingSource bi = new BindingSource();
+            bi.DataSource = ctx.TOOLs;
+            grdRucksack.DataSource = bi;
+            grdRucksack.Refresh();
         }
     }
 }

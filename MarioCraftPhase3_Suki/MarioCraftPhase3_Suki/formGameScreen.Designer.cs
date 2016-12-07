@@ -33,6 +33,10 @@
             this.player = new System.Windows.Forms.Label();
             this.playerHealthBar = new System.Windows.Forms.ProgressBar();
             this.lblPlayerHealth = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.grdRucksack = new System.Windows.Forms.DataGridView();
+            this.btnViewRucksack = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.grdRucksack)).BeginInit();
             this.SuspendLayout();
             // 
             // btnUserDetail
@@ -49,7 +53,7 @@
             // btnBackToMainMenu
             // 
             this.btnBackToMainMenu.Font = new System.Drawing.Font("Super Mario 286", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackToMainMenu.Location = new System.Drawing.Point(617, 12);
+            this.btnBackToMainMenu.Location = new System.Drawing.Point(636, 563);
             this.btnBackToMainMenu.Name = "btnBackToMainMenu";
             this.btnBackToMainMenu.Size = new System.Drawing.Size(255, 37);
             this.btnBackToMainMenu.TabIndex = 1;
@@ -61,7 +65,7 @@
             // 
             this.player.AutoSize = true;
             this.player.Font = new System.Drawing.Font("Super Mario 286", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.player.Location = new System.Drawing.Point(81, 428);
+            this.player.Location = new System.Drawing.Point(99, 521);
             this.player.Name = "player";
             this.player.Size = new System.Drawing.Size(72, 26);
             this.player.TabIndex = 3;
@@ -85,11 +89,40 @@
             this.lblPlayerHealth.TabIndex = 6;
             this.lblPlayerHealth.Text = "Player Health";
             // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(12, 65);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(260, 22);
+            this.txtEmail.TabIndex = 7;
+            // 
+            // grdRucksack
+            // 
+            this.grdRucksack.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdRucksack.Location = new System.Drawing.Point(300, 163);
+            this.grdRucksack.Name = "grdRucksack";
+            this.grdRucksack.RowTemplate.Height = 24;
+            this.grdRucksack.Size = new System.Drawing.Size(269, 215);
+            this.grdRucksack.TabIndex = 8;
+            // 
+            // btnViewRucksack
+            // 
+            this.btnViewRucksack.Location = new System.Drawing.Point(300, 12);
+            this.btnViewRucksack.Name = "btnViewRucksack";
+            this.btnViewRucksack.Size = new System.Drawing.Size(142, 37);
+            this.btnViewRucksack.TabIndex = 9;
+            this.btnViewRucksack.Text = "View Rucksack";
+            this.btnViewRucksack.UseVisualStyleBackColor = true;
+            this.btnViewRucksack.Click += new System.EventHandler(this.btnViewRucksack_Click);
+            // 
             // formGameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(903, 612);
+            this.Controls.Add(this.btnViewRucksack);
+            this.Controls.Add(this.grdRucksack);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblPlayerHealth);
             this.Controls.Add(this.playerHealthBar);
             this.Controls.Add(this.player);
@@ -99,6 +132,7 @@
             this.Text = "Mario Craft - Game Screen";
             this.Load += new System.EventHandler(this.formGameScreen_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.formGameScreen_KeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.grdRucksack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,5 +145,8 @@
         private System.Windows.Forms.Label player;
         private System.Windows.Forms.ProgressBar playerHealthBar;
         private System.Windows.Forms.Label lblPlayerHealth;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.DataGridView grdRucksack;
+        private System.Windows.Forms.Button btnViewRucksack;
     }
 }

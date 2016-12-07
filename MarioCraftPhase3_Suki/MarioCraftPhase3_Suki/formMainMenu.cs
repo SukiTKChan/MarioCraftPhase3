@@ -77,8 +77,8 @@ namespace MarioCraftPhase3_Suki
                 return;
             }
 
-            //https://dotprogramming.blogspot.com/2015/09/login-form-using-entity-framework-in.html
 
+            //https://dotprogramming.blogspot.com/2015/09/login-form-using-entity-framework-in.html
             //check if user email matches database
             var userExist = user.FirstOrDefault(a => a.USEREMAIL.Equals(txtEmail.Text));
 
