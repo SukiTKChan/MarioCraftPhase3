@@ -14,5 +14,6 @@ namespace MarioCraftPhase3_Suki
 
         [StringLength(20)]
         public string USEREMAIL { get; set; }
+
     }
 }

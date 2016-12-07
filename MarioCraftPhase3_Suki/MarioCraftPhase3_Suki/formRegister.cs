@@ -66,7 +66,7 @@ namespace MarioCraftPhase3_Suki
                 return;
             }
 
-            //if email does not match records in database
+            //if email matches records in database
             if (userExist != null)
             {
                 //if password matches records in database

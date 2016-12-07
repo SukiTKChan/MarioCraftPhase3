@@ -33,8 +33,9 @@ C:\Users\Suki\Documents\GitHub\MarioCraftPhase3\MarioCraftPhase3_Suki\MarioCraft
 C:\Users\Suki\Documents\GitHub\MarioCraftPhase3\MarioCraftPhase3_Suki\MarioCraftPhase3_Suki\obj\Debug\MarioCraftPhase3_Suki.g.resources
 C:\Users\Suki\Documents\GitHub\MarioCraftPhase3\MarioCraftPhase3_Suki\MarioCraftPhase3_Suki\obj\Debug\MarioCraftPhase3_Suki.formMainMenu.resources
 C:\Users\Suki\Documents\GitHub\MarioCraftPhase3\MarioCraftPhase3_Suki\MarioCraftPhase3_Suki\obj\Debug\MarioCraftPhase3_Suki.formRegister.resources
-C:\Users\Suki\Documents\GitHub\MarioCraftPhase3\MarioCraftPhase3_Suki\MarioCraftPhase3_Suki\obj\Debug\MarioCraftPhase3_Suki.formGameScreen.resources
 C:\Users\Suki\Documents\GitHub\MarioCraftPhase3\MarioCraftPhase3_Suki\MarioCraftPhase3_Suki\obj\Debug\MarioCraftPhase3_Suki.Properties.Resources.resources
 C:\Users\Suki\Documents\GitHub\MarioCraftPhase3\MarioCraftPhase3_Suki\MarioCraftPhase3_Suki\obj\Debug\MarioCraftPhase3_Suki.csproj.GenerateResource.Cache
 C:\Users\Suki\Documents\GitHub\MarioCraftPhase3\MarioCraftPhase3_Suki\MarioCraftPhase3_Suki\obj\Debug\MarioCraftPhase3_Suki.exe
 C:\Users\Suki\Documents\GitHub\MarioCraftPhase3\MarioCraftPhase3_Suki\MarioCraftPhase3_Suki\obj\Debug\MarioCraftPhase3_Suki.pdb
+C:\Users\Suki\Documents\GitHub\MarioCraftPhase3\MarioCraftPhase3_Suki\MarioCraftPhase3_Suki\obj\Debug\MarioCraftPhase3_Suki.csprojResolveAssemblyReference.cache
+C:\Users\Suki\Documents\GitHub\MarioCraftPhase3\MarioCraftPhase3_Suki\MarioCraftPhase3_Suki\obj\Debug\MarioCraftPhase3_Suki.formUserAccount.resources

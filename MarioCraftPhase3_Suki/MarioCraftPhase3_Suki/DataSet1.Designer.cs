@@ -4886,7 +4886,7 @@ namespace MarioCraftPhase3_Suki.DataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[2];
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[3];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT USERID, USEREMAIL, USERPASSWORD FROM ADMIN.GAMEUSER";
@@ -4903,6 +4903,33 @@ namespace MarioCraftPhase3_Suki.DataSet1TableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "USEREMAIL";
             this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT USERID, USEREMAIL, USERPASSWORD FROM ADMIN.GAMEUSER WHERE USERID = :id AND" +
+                " USEREMAIL = :email AND USERPASSWORD = :password";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":id";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "USERID";
+            this._commandCollection[2].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":email";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "USEREMAIL";
+            this._commandCollection[2].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":password";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "USERPASSWORD";
+            this._commandCollection[2].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4940,6 +4967,32 @@ namespace MarioCraftPhase3_Suki.DataSet1TableAdapters {
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(email));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy1(DataSet1.GAMEUSERDataTable dataTable, decimal id, string email, string password) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(id));
+            if ((email == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(email));
+            }
+            if ((password == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(password));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();

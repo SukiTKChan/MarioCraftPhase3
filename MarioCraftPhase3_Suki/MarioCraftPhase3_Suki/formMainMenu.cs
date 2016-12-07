@@ -14,7 +14,7 @@ namespace MarioCraftPhase3_Suki
     public partial class formMainMenu : Form
     {
         private formRegister registerMenu;
-        private formGameScreen gameScreen;
+        private formUserAccount gameScreen;
         
 
         GAMEUSER gameUser = new GAMEUSER();
@@ -38,7 +38,7 @@ namespace MarioCraftPhase3_Suki
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        public formMainMenu(formGameScreen gameScreen)
+        public formMainMenu(formUserAccount gameScreen)
         {
             InitializeComponent();
             this.gameScreen = gameScreen;
@@ -72,7 +72,7 @@ namespace MarioCraftPhase3_Suki
             //if either email or password field empty display error message
             if (txtEmail.Text.Equals("") && txtPassword.Text.Equals(""))
             {
-                MessageBox.Show("Email and Password field must not be empty", "Email or Password field empty",
+                MessageBox.Show("Email and Password field cannot be empty", "Email or Password field empty",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmail.Focus();
                 return;
@@ -93,11 +93,9 @@ namespace MarioCraftPhase3_Suki
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                     
 
-                    formGameScreen gameScreen = new formGameScreen(txtEmail.Text);
+                    formUserAccount gameScreen = new formUserAccount(txtEmail.Text);
                     this.Close();
                     gameScreen.Show();
-
-                    //ClearForm();
                 }
                 else
                 {
@@ -115,11 +113,6 @@ namespace MarioCraftPhase3_Suki
                 txtEmail.Focus();
                 return;
             }    
-        }
-        private void ClearForm()
-        {
-            txtEmail.Clear();
-            txtPassword.Clear();
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
