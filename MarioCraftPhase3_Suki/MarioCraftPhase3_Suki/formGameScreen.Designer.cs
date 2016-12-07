@@ -28,15 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnUserDetail = new System.Windows.Forms.Button();
             this.btnBackToMainMenu = new System.Windows.Forms.Button();
             this.player = new System.Windows.Forms.Label();
             this.playerHealthBar = new System.Windows.Forms.ProgressBar();
             this.lblPlayerHealth = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.grdRucksack = new System.Windows.Forms.DataGridView();
             this.btnViewRucksack = new System.Windows.Forms.Button();
+            this.grdDetails = new System.Windows.Forms.DataGridView();
+            this.uSERIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uSEREMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gAMEUSERDETAILSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new MarioCraftPhase3_Suki.DataSet1();
+            this.gAMEUSERDETAILSTableAdapter = new MarioCraftPhase3_Suki.DataSet1TableAdapters.GAMEUSERDETAILSTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.grdRucksack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDetails)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gAMEUSERDETAILSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnUserDetail
@@ -89,25 +98,18 @@
             this.lblPlayerHealth.TabIndex = 6;
             this.lblPlayerHealth.Text = "Player Health";
             // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(12, 65);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(260, 22);
-            this.txtEmail.TabIndex = 7;
-            // 
             // grdRucksack
             // 
             this.grdRucksack.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdRucksack.Location = new System.Drawing.Point(300, 163);
+            this.grdRucksack.Location = new System.Drawing.Point(301, 65);
             this.grdRucksack.Name = "grdRucksack";
             this.grdRucksack.RowTemplate.Height = 24;
-            this.grdRucksack.Size = new System.Drawing.Size(269, 215);
+            this.grdRucksack.Size = new System.Drawing.Size(142, 76);
             this.grdRucksack.TabIndex = 8;
             // 
             // btnViewRucksack
             // 
-            this.btnViewRucksack.Location = new System.Drawing.Point(300, 12);
+            this.btnViewRucksack.Location = new System.Drawing.Point(301, 12);
             this.btnViewRucksack.Name = "btnViewRucksack";
             this.btnViewRucksack.Size = new System.Drawing.Size(142, 37);
             this.btnViewRucksack.TabIndex = 9;
@@ -115,14 +117,55 @@
             this.btnViewRucksack.UseVisualStyleBackColor = true;
             this.btnViewRucksack.Click += new System.EventHandler(this.btnViewRucksack_Click);
             // 
+            // grdDetails
+            // 
+            this.grdDetails.AutoGenerateColumns = false;
+            this.grdDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.uSERIDDataGridViewTextBoxColumn,
+            this.uSEREMAILDataGridViewTextBoxColumn});
+            this.grdDetails.DataSource = this.gAMEUSERDETAILSBindingSource;
+            this.grdDetails.Location = new System.Drawing.Point(12, 65);
+            this.grdDetails.Name = "grdDetails";
+            this.grdDetails.RowTemplate.Height = 24;
+            this.grdDetails.Size = new System.Drawing.Size(240, 76);
+            this.grdDetails.TabIndex = 10;
+            this.grdDetails.Visible = false;
+            // 
+            // uSERIDDataGridViewTextBoxColumn
+            // 
+            this.uSERIDDataGridViewTextBoxColumn.DataPropertyName = "USERID";
+            this.uSERIDDataGridViewTextBoxColumn.HeaderText = "USERID";
+            this.uSERIDDataGridViewTextBoxColumn.Name = "uSERIDDataGridViewTextBoxColumn";
+            // 
+            // uSEREMAILDataGridViewTextBoxColumn
+            // 
+            this.uSEREMAILDataGridViewTextBoxColumn.DataPropertyName = "USEREMAIL";
+            this.uSEREMAILDataGridViewTextBoxColumn.HeaderText = "USEREMAIL";
+            this.uSEREMAILDataGridViewTextBoxColumn.Name = "uSEREMAILDataGridViewTextBoxColumn";
+            // 
+            // gAMEUSERDETAILSBindingSource
+            // 
+            this.gAMEUSERDETAILSBindingSource.DataMember = "GAMEUSERDETAILS";
+            this.gAMEUSERDETAILSBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gAMEUSERDETAILSTableAdapter
+            // 
+            this.gAMEUSERDETAILSTableAdapter.ClearBeforeFill = true;
+            // 
             // formGameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(903, 612);
+            this.ClientSize = new System.Drawing.Size(911, 623);
+            this.Controls.Add(this.grdDetails);
             this.Controls.Add(this.btnViewRucksack);
             this.Controls.Add(this.grdRucksack);
-            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblPlayerHealth);
             this.Controls.Add(this.playerHealthBar);
             this.Controls.Add(this.player);
@@ -133,6 +176,9 @@
             this.Load += new System.EventHandler(this.formGameScreen_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.formGameScreen_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.grdRucksack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDetails)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gAMEUSERDETAILSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,8 +191,13 @@
         private System.Windows.Forms.Label player;
         private System.Windows.Forms.ProgressBar playerHealthBar;
         private System.Windows.Forms.Label lblPlayerHealth;
-        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.DataGridView grdRucksack;
         private System.Windows.Forms.Button btnViewRucksack;
+        private System.Windows.Forms.DataGridView grdDetails;
+        private DataSet1 dataSet1;
+        private System.Windows.Forms.BindingSource gAMEUSERDETAILSBindingSource;
+        private DataSet1TableAdapters.GAMEUSERDETAILSTableAdapter gAMEUSERDETAILSTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uSERIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uSEREMAILDataGridViewTextBoxColumn;
     }
 }

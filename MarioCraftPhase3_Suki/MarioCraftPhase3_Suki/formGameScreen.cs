@@ -13,13 +13,21 @@ namespace MarioCraftPhase3_Suki
     public partial class formGameScreen : Form
     {
         private formMainMenu mainMenu;
+
         GAMEUSER gu = new GAMEUSER();
-        
+
+        String email;
 
         public formGameScreen()
         {
             InitializeComponent();
             //KeyDown += new KeyEventHandler(formGameScreen_KeyDown);
+        }
+
+        public formGameScreen(String email)
+        {
+            InitializeComponent();
+            this.email = email;
         }
         public formGameScreen(formMainMenu mainMenu)
         {
@@ -30,14 +38,18 @@ namespace MarioCraftPhase3_Suki
 
         private void btnUserDetail_Click(object sender, EventArgs e)
         {
-            MarioCraftModel ctx = new MarioCraftModel();
+            /*MarioCraftModel ctx = new MarioCraftModel();
             GAMEUSER viewUser = new GAMEUSER();
 
             var user = from u in ctx.GAMEUSERs where u.USERID == 73 select u;
             
             
-            this.txtEmail.Text = user.FirstOrDefault().USEREMAIL;
+            this.txtEmail.Text = user.FirstOrDefault().USEREMAIL;*/
 
+            //this show current login user details
+            this.gAMEUSERDETAILSTableAdapter.FillBy(dataSet1.GAMEUSERDETAILS, email);
+            grdDetails.Show();
+            
         }
 
         private void btnBackToMainMenu_Click(object sender, EventArgs e)
@@ -49,6 +61,8 @@ namespace MarioCraftPhase3_Suki
 
         private void formGameScreen_Load(object sender, EventArgs e)
         {
+
+            
 
         }
 
@@ -100,5 +114,8 @@ namespace MarioCraftPhase3_Suki
             grdRucksack.DataSource = bi;
             grdRucksack.Refresh();
         }
+
+   
+
     }
 }

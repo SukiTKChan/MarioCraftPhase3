@@ -15,6 +15,7 @@ namespace MarioCraftPhase3_Suki
     {
         private formRegister registerMenu;
         private formGameScreen gameScreen;
+        
 
         GAMEUSER gameUser = new GAMEUSER();
 
@@ -90,11 +91,13 @@ namespace MarioCraftPhase3_Suki
                 {
                     MessageBox.Show("Log in success!", "Log In Confirmation",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ClearForm();
+                    
 
-                    formGameScreen gameScreen = new formGameScreen(this);
+                    formGameScreen gameScreen = new formGameScreen(txtEmail.Text);
                     this.Close();
                     gameScreen.Show();
+
+                    //ClearForm();
                 }
                 else
                 {
