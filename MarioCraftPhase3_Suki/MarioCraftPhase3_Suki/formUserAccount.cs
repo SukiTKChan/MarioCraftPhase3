@@ -18,7 +18,7 @@ namespace MarioCraftPhase3_Suki
         private formMainMenu mainMenu;
 
         GAMEUSER userUpdate = new GAMEUSER();
-        GAMEUSERDETAIL u = new GAMEUSERDETAIL();
+        GAMEUSERDETAIL gameUserDetail = new GAMEUSERDETAIL();
 
         private String email;
         //byte id;
@@ -74,12 +74,16 @@ namespace MarioCraftPhase3_Suki
         private void grdDetails_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             grpAmend.Show();
+            
+            
 
-            //var userID = from u in ctx.GAMEUSERs where u.USERID == id select u;
-            var userEmail = from u in ctx.GAMEUSERs where u.USEREMAIL == email select u;
+            //var userID = ctx.GAMEUSERs.First(a => a.USERID == );
+              var userEmail = from u in ctx.GAMEUSERs where u.USEREMAIL == email select u;
+            //var userID = from u in ctx.GAMEUSERs where u.USERID == userUpdate.USERID select u;
+            
             //var userPassword = from u in ctx.GAMEUSERs where u.USERPASSWORD == password select u;
 
-            //this.txtID.Text = userID.FirstOrDefault().USERID.ToString();
+            //this.txtID.Text = userID.ToString();
             this.txtEmail.Text = userEmail.FirstOrDefault().USEREMAIL.Trim();
             
 
